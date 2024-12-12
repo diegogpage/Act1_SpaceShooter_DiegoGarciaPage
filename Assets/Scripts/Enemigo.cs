@@ -116,9 +116,13 @@ public class Enemigo : MonoBehaviour
             {
                 Instantiate(powerUps[2], transform.position, Quaternion.identity);
             }
-            else if (ptje <= 0.6f && vidasPlayer < 5) //Vida
+            else if (ptje <= 0.6f) //Vida
             {
-                Instantiate(powerUps[3], transform.position, Quaternion.identity);
+                if(vidasPlayer < 5)
+                {
+                    Instantiate(powerUps[3], transform.position, Quaternion.identity);
+                }
+                
             }
 
         }

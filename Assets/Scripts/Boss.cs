@@ -17,7 +17,7 @@ public class Boss : MonoBehaviour
     private bool abajo;
     private bool avanzar = true;
     private float timerDisparar;
-    public static bool boss;
+    public static bool boss = true;
     private bool mostrarBoss = true;
 
     private ObjectPool<DisparoEnemigo> disparoBossPool;
