@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Pool;
+using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject[] imgVidas;
     [SerializeField] private AudioSource musicaFondo;
     [SerializeField] private Explosion explosionPrefab;
+    [SerializeField] private Boss bossPrefab;
 
 
     [SerializeField] private GameObject textoVidas;
@@ -27,10 +29,10 @@ public class Player : MonoBehaviour
     private float velocidad = 5f;
     private float timer = 0.5f; //Lo inicializo a 0.5 para que pueda disparar al empezar
     private float ratioDisparo = 0.5f;
-    //private int vidas = 5;
     public static int vidas;
     private int navesDestruidas;
     private bool jefe = true;
+    public static bool navePlayer;
 
     private float timerWIN;
     private float esperaWIN = 3f;
@@ -92,7 +94,9 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Para el reinicio
         vidas = 5;
+        navePlayer = true;
     }
 
     // Update is called once per frame
@@ -256,6 +260,10 @@ public class Player : MonoBehaviour
                 MuertePlayer();
             }
         }
+        else if (elOtro.gameObject.CompareTag("Boss"))
+        {
+            MuertePlayer();
+        }
 
         else if (elOtro.gameObject.CompareTag("PowerUpVel"))
         {
@@ -291,6 +299,7 @@ public class Player : MonoBehaviour
     {
         Destroy(this.gameObject);
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        navePlayer = false;
         textoVidas.gameObject.SetActive(false);
         textoGameOver.text = "GAME OVER";
         textoNavesDestruidas.text = "Naves destruidas: " + navesDestruidas;

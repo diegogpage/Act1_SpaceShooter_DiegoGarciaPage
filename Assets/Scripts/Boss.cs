@@ -17,7 +17,8 @@ public class Boss : MonoBehaviour
     private bool abajo;
     private bool avanzar = true;
     private float timerDisparar;
-    public static bool boss = true;
+    public static bool boss;
+    private bool mostrarBoss = true;
 
     private ObjectPool<DisparoEnemigo> disparoBossPool;
 
@@ -57,28 +58,38 @@ public class Boss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //Para el reinicio
+        boss = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (avanzar)
-        {
-            Avance();
-        }
-        else
-        {
-            CambioDireccion();
-        }
-        
 
-        timerDisparar += Time.deltaTime;
-        if (timerDisparar >= 0.5f)
+        //Si en el enfrentamiento final muere el player, el boss se para y deja de disparar
+        mostrarBoss = Player.navePlayer;
+        if (mostrarBoss)
         {
-            disparoBossPool.Get();
-            timerDisparar = 0;
+            //Deja de disparar
+            timerDisparar += Time.deltaTime;
+            if (timerDisparar >= 0.5f)
+            {
+                disparoBossPool.Get();
+                timerDisparar = 0;
+            }
+
+            //Deja de moverse
+            if (avanzar)
+            {
+                Avance();
+            }
+            else
+            {
+                CambioDireccion();
+            }
         }
+
+        
 
         if (vida <= 0)
         {
@@ -87,7 +98,7 @@ public class Boss : MonoBehaviour
             Debug.Log("Boss ha muerto");
             boss = false;
         }
-        
+
     }
 
     void Avance()

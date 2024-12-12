@@ -52,7 +52,7 @@ MonoBehaviour:
   disparoPrefab: {fileID: 6967466872513416982, guid: e08d0fac12fb6b44289aad5be72c56c1, type: 3}
   posDisparo: {fileID: 7032626445691417219}
   explosionPrefab: {fileID: 3997814261599003277, guid: fd20cc4bfa18430408cb0041bb6090a3, type: 3}
-  vida: 30
+  vida: 50
 --- !u!61 &-8900909400595506894
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -82,7 +82,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

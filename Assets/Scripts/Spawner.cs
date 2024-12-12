@@ -69,14 +69,7 @@ public class Spawner : MonoBehaviour
             StopAllCoroutines();
         }
 
-        //if (boss)
-        //{
-        //    for (int i = 0; i < 1; i++)
-        //    {
-        //        Instantiate(bossPrefab, transform.position, Quaternion.identity);
-        //    }
-            
-        //}
+       
     }
 
     IEnumerator SpawnearEnemigos()

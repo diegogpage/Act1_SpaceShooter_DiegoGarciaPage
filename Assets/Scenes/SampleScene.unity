@@ -3114,7 +3114,7 @@ GameObject:
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1632464979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3130,7 +3130,7 @@ MonoBehaviour:
   player: {fileID: 1797325590}
   enemigoPrefab: {fileID: -9170721390486315330, guid: d0bcadc45fdb9ed4db1f89b51ed69c27, type: 3}
   bossPrefab: {fileID: 1984817724217738914, guid: 7426238d3d42cf4438940b26cfed2ea7, type: 3}
-  scoreBoss: 40
+  scoreBoss: 10
 --- !u!4 &1632464980
 Transform:
   m_ObjectHideFlags: 0
@@ -3311,6 +3311,7 @@ MonoBehaviour:
   - {fileID: 974128888}
   musicaFondo: {fileID: 1797325594}
   explosionPrefab: {fileID: -7397820362094952796, guid: cc3476d1618f7ca47973c23353190d32, type: 3}
+  bossPrefab: {fileID: 1984817724217738914, guid: 7426238d3d42cf4438940b26cfed2ea7, type: 3}
   textoVidas: {fileID: 1728962076}
   textoGameOver: {fileID: 1203174821}
   textoNavesDestruidas: {fileID: 891644165}
